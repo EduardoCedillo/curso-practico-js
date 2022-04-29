@@ -94,3 +94,31 @@ function calcularAreaCuadrado() {
   const area = AreaCuadrado(value);
   alert(area);
 }
+
+function calcularAlturaTriangulo(lado, base) {
+  const mitadBase = base / 2;
+  const altura = Math.sqrt(lado * lado - mitadBase * mitadBase);
+  return altura;
+}
+
+function calcularAltura() {
+  const lado1 = document.getElementById("InputLado1").value;
+  const lado2 = document.getElementById("InputLado2").value;
+  const lado3 = document.getElementById("InputLado3").value;
+  let altura = 0;
+
+  if (lado1 === lado2) {
+    altura = calcularAlturaTriangulo(lado1, lado3);
+    alert(altura);
+  }
+  if (lado2 === lado3) {
+    altura = calcularAlturaTriangulo(lado2, lado1);
+    alert(altura);
+  }
+  if (lado1 === lado3) {
+    altura = calcularAlturaTriangulo(lado1, lado2);
+    alert(altura);
+  } else {
+    alert("El triangulo no es isosceles");
+  }
+}
